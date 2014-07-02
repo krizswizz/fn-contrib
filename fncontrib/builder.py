@@ -144,3 +144,9 @@ def keep_indexed(iterable, pred):
     the elements themselves, keeping all of the truthy values in the end.
     '''
     return filter(None, fn.iters.starmap(pred, enumerate(iterable)))
+
+def reverse_order(iterable):
+    '''Accepts an iterable as an argument and returns an iterator whose
+    elements are in the reverse order.
+    '''
+    return reversed(iterable)

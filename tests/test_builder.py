@@ -177,3 +177,9 @@ def test_keep_indexed():
     b = (-9, 0, 29, -7, 45, 3, -8)
     tools.eq_(dut(b, posy), (29, 45, 3), 'keeps elements whose index passes ' \
               'a truthy test')
+
+def test_reverse_order():
+    dut = fn.F(tuple) << builder.reverse_order
+
+    tools.eq_(dut(range(1, 4)), (3, 2, 1), 'returns a tuple whose elements ' \
+              'are in the opposite order of the argument')
